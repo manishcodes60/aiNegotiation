@@ -1,0 +1,54 @@
+a{
+    text-decoration: none!important;
+}
+
+.team-section{
+    margin: 3em 0;
+    padding: 0 1.5em;
+}
+
+.team-section .team-section-title h2{
+    text-transform: uppercase;
+    color: #d8ab4c;
+    font-weight: bold;
+    text-align: center;
+    font-size: 3em;
+}
+
+.team-section .team-section-content .team-card{
+    border: 1px solid #000000;
+    transition: all 0.2s ease-in-out;
+}
+
+.team-section .team-section-content .team-card .team-card-img{
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+    
+}
+
+.team-section .team-section-content .team-card .team-card-img img{
+    width: 100%;
+}
+
+.team-section .team-section-content .team-card .team-card-info{
+    padding: 1em;
+}
+
+.team-section .team-section-content .team-card .team-card-info h3{
+    font-family: "Antonio";
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #000000;
+}
+
+.team-section .team-section-content .team-card .team-card-info p{
+    font-family: "Libre Caslon";
+    color: #000000;
+    font-size: 0.9em;
+    margin-bottom: 0;
+}
+
+.team-section .team-section-content .team-card:hover{
+    border: 1px solid #d8ab4c;
+}

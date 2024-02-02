@@ -1,0 +1,540 @@
+{% extends "base.html" %} {% load crispy_forms_tags %}
+{% block title %}AI Supported Transcript Coding{% endblock %} 
+{% block content %}
+<div class="transcript-section">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="transcript-introduction">
+          <p>
+            Welcome to version 1.0 of the Negotiation Transcript Coder provided
+            by Vanderbilt University. The purpose of this process is to automate
+            the coding process for negotiation scholars who want to code
+            negotiation transcripts.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="transcript-collapse">
+          <div id="accordion">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button
+                    class="btn btn-link"
+                    data-toggle="collapse"
+                    data-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    AI MODEL USED FOR CODING
+                  </button>
+                </h5>
+              </div>
+
+              <div
+                id="collapseOne"
+                class="collapse show"
+                aria-labelledby="headingOne"
+                data-parent="#accordion"
+              >
+                <div class="card-body">Claude 2</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                  <button
+                    class="btn btn-link collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    CODING SCHEME USED
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapseTwo"
+                class="collapse"
+                aria-labelledby="headingTwo"
+                data-parent="#accordion"
+              >
+                <div class="card-body">
+                  <p>
+                    The coding scheme we use is a simplified, 19-code version of
+                    NegotiAct, a coding scheme developed by
+                    <a
+                      href="https://journals.sagepub.com/doi/10.1177/10596011221132600"
+                      class="external-link"
+                      target="_blank"
+                      >Jackel, et al (2022)</a
+                    >. This approach was selected because it was designed to
+                    incorporate the major themes of the most widely cited
+                    negotiation coding schemes.
+                  </p>
+
+                  <p>
+                    The NegotiAct coding scheme includes 42 codes. Because our
+                    initial attempts with transformer models could not handle so
+                    many codes, we asked Jackel to suggest ways to reduce the
+                    number of codes. She did this by a) combining some codes and
+                    b) skipping some codes. The codes that were selected to keep
+                    are the ones that are based on the five most-cited
+                    negotiation articles with codes (X,Y, X, ) and which
+                    occurred most often in Jackel et al’s (2022) transcript
+                    database. We also excluded those that depend on knowing the
+                    payoff structure of the negotiation, and comparing
+                    statements with the payoff structure, such as “high anchor”
+                    or “lying.” Those codes that were skipped are represented by
+                    the category “other,” which was added to prevent model from
+                    forcing statements into the wrong code. This process
+                    produced a list of 17 codes, plus “other.”
+                  </p>
+
+                  <p>The modified coding scheme is:</p>
+
+                  <div class="coding-table">
+                    <table class="table table-hover table-responsive-lg">
+                      <thead>
+                        <tr>
+                          <th scope="col" class="col-lg-3">Code Number</th>
+                          <th scope="col" class="col-lg-9">Code</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="table-danger">
+                          <th scope="row">1</th>
+                          <td>
+                            <span class="green-badge">Providing</span>
+                            positional information
+                          </td>
+                        </tr>
+                        <tr class="table-danger">
+                          <th scope="row">2</th>
+                          <td>
+                            <span class="blue-badge">Asking</span>
+                            positional information
+                          </td>
+                        </tr>
+                        <tr class="table-danger">
+                          <th scope="row">3</th>
+                          <td>
+                            <span class="green-badge">Providing</span>
+                            priority-related information
+                          </td>
+                        </tr>
+                        <tr class="table-danger">
+                          <th scope="row">4</th>
+                          <td>
+                            <span class="blue-badge">Asking</span> for
+                            priority-related information
+                          </td>
+                        </tr>
+                        <tr class="table-danger">
+                          <th scope="row">5</th>
+                          <td>
+                            <span class="green-badge">Providing</span>
+                            preference-related information
+                          </td>
+                        </tr>
+                        <tr class="table-danger">
+                          <th scope="row">6</th>
+                          <td>
+                            <span class="blue-badge">Asking</span> for
+                            preference-related information
+                          </td>
+                        </tr>
+                        <tr class="table-danger">
+                          <th scope="row">7</th>
+                          <td>Clarification</td>
+                        </tr>
+                        <tr class="table-info">
+                          <th scope="row">8</th>
+                          <td>Single-issue activity</td>
+                        </tr>
+                        <tr class="table-info">
+                          <th scope="row">9</th>
+                          <td>Multi-issue activity</td>
+                        </tr>
+                        <tr class="table-info">
+                          <th scope="row">10</th>
+                          <td>Rejecting Offer</td>
+                        </tr>
+                        <tr class="table-info">
+                          <th scope="row">11</th>
+                          <td>Accepting Offer</td>
+                        </tr>
+                        <tr class="table-danger">
+                          <th scope="row">12</th>
+                          <td>
+                            Contentious Communication
+                            <span class="red-badge"
+                              >(Stressing Power, Criticism, Threat,
+                              Hostilty)</span
+                            >
+                          </td>
+                        </tr>
+                        <tr class="table-danger">
+                          <th scope="row">13</th>
+                          <td>
+                            Substantiation
+                            <span class="red-badge"
+                              >(Substantiation, Asking for substantiation and
+                              Rejecting substantiation)</span
+                            >
+                          </td>
+                        </tr>
+                        <tr class="table-info">
+                          <th scope="row">14</th>
+                          <td>
+                            Positive Statements
+                            <span class="red-badge"
+                              >(Positive affective reaction and Positive
+                              relationship remarks)</span
+                            >
+                          </td>
+                        </tr>
+                        <tr class="table-info">
+                          <th scope="row">15</th>
+                          <td>
+                            Negative Statements
+                            <span class="red-badge"
+                              >(Negative affective reaction and Negative
+                              relationship remarks)</span
+                            >
+                          </td>
+                        </tr>
+                        <tr class="table-info">
+                          <th scope="row">16</th>
+                          <td>Humor</td>
+                        </tr>
+                        <tr class="table-danger">
+                          <th scope="row">17</th>
+                          <td>Active listening</td>
+                        </tr>
+                        <tr class="table-danger">
+                          <th scope="row">18</th>
+                          <td>
+                            Procedural comments
+                            <span class="red-badge"
+                              >(Procedural suggestion, Procedural discussion,
+                              Time management)</span
+                            >
+                          </td>
+                        </tr>
+                        <tr class="table-info">
+                          <th scope="row">19</th>
+                          <td>Other</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                  <button
+                    class="btn btn-link collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    Validation of Coding Scheme
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapseThree"
+                class="collapse"
+                aria-labelledby="headingThree"
+                data-parent="#accordion"
+              >
+                <div class="card-body">
+                  <p>
+                    The validation process included two parts: testing
+                    performance using a set of human coded sample sentences, and
+                    testing performance on 5 human coded transcripts.
+                  </p>
+
+                  <p>
+                    <span style="font-weight: bold; margin-left: 2em"
+                      >Validation Step #1: </span
+                    >Sample Sentences. Jackel et al (2022) included about five
+                    sample sentences for each code in their coding manual. Dr.
+                    Jackel then created about 20 more sample sentences for each
+                    code. We then used ChatGPT to create another 70 sentences
+                    that were similar to the initial 25 examples. These
+                    sentences were then check by Dr. Jackel and any which were
+                    not good examples of that code were deleted. In the end we
+                    had a list of about 70-80 examples for each code, with a
+                    smaller sample for some of the very clear-cut codes (such as
+                    “reject an offer”). We used 70% of the sample sentences to
+                    train the model and held back 30% to validate the model. We
+                    asked the trained model to code those 30%, and checked for
+                    accuracy. In the model we present here, the accuracy was
+                    92%. We should note that with human coders, agreement levels
+                    are typically in the 80-90% range, so 92% should be
+                    considered very good. See Appendix B for the test results.
+                  </p>
+                  <p>
+                    <span style="font-weight: bold; margin-left: 2em"
+                      >Validation Step #2: </span
+                    >Test with NegotiAct Hand Coding of Transcripts. We took
+                    five sample transcripts provided by different scholars, and
+                    first hand coded them. Then, we ran the program to code
+                    them, and compared the human-coding against the model
+                    coding. The results on these five transcripts were X%, Y%,
+                    Y%, Y%, and Y%. See Appendix C for the test results.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                  <button
+                    class="btn btn-link collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapseFour"
+                    aria-expanded="false"
+                    aria-controls="collapseFour"
+                  >
+                    Formatting Your Transcript
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapseFour"
+                class="collapse"
+                aria-labelledby="headingFour"
+                data-parent="#accordion"
+              >
+                <div class="card-body">
+                  To get codes transform you transcript into txt format (more on
+                  that below) and copy into the INPUT section below. The model
+                  will provide a csv file with sentences and codes.
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                  <button
+                    class="btn btn-link collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapseFive"
+                    aria-expanded="false"
+                    aria-controls="collapseFive"
+                  >
+                    Steps to Code Your Transcripts
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapseFive"
+                class="collapse"
+                aria-labelledby="headingFive"
+                data-parent="#accordion"
+              >
+                <div class="card-body">
+                  <div class="card-body-subtitle">
+                    Step 1: Create thoughts units
+                  </div>
+
+                  <p>
+                    <span style="margin-left: 2em">The</span> appropriate unit
+                    of analysis is a “thought unit.” This may sometimes be a
+                    whole sentence, or there may be several thought units within
+                    a sentence. If you do nothing, the model will take each
+                    sentence as the unit of analysis, bounded by any of these
+                    five markers: .!?[]. If you want to break a sentence into
+                    two or more thought units, put the word “RETURN” (all upper
+                    case) or one of the five markers into the sentence at the
+                    end of the thought unit. This sentence would be one thought
+                    unit:
+                    <i
+                      >“I would like that offer, but I am not confident in their
+                      abilities.”</i
+                    >
+                    Adding RETURN like this would make it into two thought
+                    units:<i
+                      >“I would like that offer RETURN, but I am not confident
+                      in their abilities.”</i
+                    >
+                    See this document for more on thought units.
+                  </p>
+
+                  <div class="card-body-subtitle">Step 2: Enter text</div>
+
+                  <p>
+                    <span style="margin-left: 2em">Within</span>
+                    Word or Excel, select about 30 thought units at a time.
+                    Right click “copy.” Then move your cursor into the input
+                    box. Right click “paste as plain text” (control V). Click
+                    SUBMIT. You will see a timer start, which should finish in
+                    about 30 seconds.
+                  </p>
+
+                  <div class="card-body-subtitle">Step 3: Read Output</div>
+
+                  <p>
+                    <span style="margin-left: 2em">You</span> will see a cvs
+                    file in the output box. Click on the blue download arrow on
+                    the right. The file will be displayed by Excel. The format
+                    should be Sentence number, Category Number (see above),
+                    Input Sentence. The format may also come out looking a bit
+                    different, with sentence number and code shown in this way
+                    {3:14}.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                  <button
+                    class="btn btn-link collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapseSix"
+                    aria-expanded="false"
+                    aria-controls="collapseSix"
+                  >
+                    Submit Your Transcript
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapseSix"
+                class="collapse"
+                aria-labelledby="headingSix"
+                data-parent="#accordion"
+              >
+                <div class="card-body">
+                  <div class="form-group col-md-10 offset-md-1 p-0">
+                  <form id="transcriptForm" method="POST">
+                    {% csrf_token %}   
+                  
+                      <label for="transcriptText"
+                        >Following the instructions above generate your
+                        negotiation transcript and paste it below:</label
+                      >
+                
+                      <textarea
+                        type="text"
+                        class="form-control"
+                        id="transcriptText"
+                        name="transcriptText"
+                        placeholder="Paste Negotiation Statement Text Here"
+                        aria-describedby="transcript"
+                      ></textarea>
+
+                    <div class="row justify-content-center">
+                      <div class="col-md-5">
+                        <button
+                          type="button"
+                          onclick="clearField()"
+                          class="clear-button btn btn-primary"
+                        >
+                          Clear
+                        </button>
+                      </div>
+                      <div class="col-md-5">
+                        <button
+                          type="button"
+                          onclick="submitForm()"
+                          class="submit-button btn btn-primary"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                      <div class="col-md-12">
+                        <div id="loading-screen" style="display: none;">
+                          {% include 'loading_screen.html' %}
+                          <!-- <div class="lds-dual-ring"></div> -->
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                {{ df_html|safe }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function showLoadingScreen() {
+      document.getElementById('loading-screen').style.display = 'block';
+  }
+
+  function hideLoadingScreen() {
+      document.getElementById('loading-screen').style.display = 'none';
+  }
+
+  function clearField(){
+    var textareaElement = document.getElementById('transcriptText');
+
+    textareaElement.value = '';
+  }
+
+  function submitForm(){
+    showLoadingScreen();
+
+    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+    const inputValue = document.getElementById('transcriptText').value;
+
+    console.log(inputValue);
+
+    fetch('../process_transcript/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': csrfToken,  
+      },
+      body: JSON.stringify({ input_value: inputValue }),
+    })
+    .then(response => {
+      if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      // Extract filename from Content-Disposition header
+      const contentDisposition = response.headers.get('Content-Disposition');
+      const filename = contentDisposition.split('filename=')[1].replace(/"/g, '');
+
+      // Create a Blob from the response data
+      return response.blob().then(blob => {
+          // Create a download link
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.download = filename;  // Use the filename suggested by the server
+
+          // Append the link to the document and trigger the download
+          document.body.appendChild(link);
+          link.click();
+
+          // Remove the link from the document
+          document.body.removeChild(link);
+
+          hideLoadingScreen();
+      });
+  })
+    .catch(error => {
+      console.error('Error:', error);
+      hideLoadingScreen();
+    });
+    // document.getElementById('transcriptForm').submit(); 
+  }
+</script>
+{% endblock %}

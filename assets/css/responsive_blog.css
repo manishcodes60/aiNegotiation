@@ -1,0 +1,9 @@
+@media (max-width:600px){
+    .blog-details-section{
+        padding: 4em 0em;
+    }
+    
+    .comment-section{
+        padding: 2em 0em;
+    }
+}

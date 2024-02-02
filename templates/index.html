@@ -1,0 +1,53 @@
+{% extends "base.html" %} {% block title %}Home - Vanderbilt AI Negotiation Lab was{% endblock %} {% block content %}
+<!-- <a href="#" id="to-top"><i class="las la-chevron-up"></i></a> -->
+<!-- home content -->
+<div class="home-section d-flex align-items-center">
+  <div class="container-fluid">
+    <div class="row d-flex align-items-center">
+      <div class="col-lg-8 offset-lg-2 px-0">
+        <div class="home-section-left">
+          <h4>AI NEGOTIATION LAB</h4>
+
+          <p>
+            The Vanderbilt AI Negotiation Lab was created to provide AI tools
+            for negotiation researchers. This includes AI-assisted coding of
+            negotiation transcripts and the creation of a quasi-subject pool for
+            scholars to ask research questions. See the links below for details.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="icon-bar">
+  <div class="container">
+    <div class="row align-items-center justify-content-middle">
+      <div class="col-md-4 offset-md-2 col-6">
+        <a href="{% url 'aiTranscript' %}">
+          <div class="icon-box">
+            <i class="las la-file-code"></i>
+            <p>
+              AI Supported Transcript Coding <br /><span
+                >(Automated Coding of Negotiation Transcripts)</span
+              >
+            </p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4 col-6">
+        <a href="{% url 'aiQuasi' %}">
+          <div class="icon-box">
+            <i class="las la-users"></i>
+            <p>
+              AI Supported Quasi Subject Pool <br /><span
+                >(Not yet available)</span
+              >
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

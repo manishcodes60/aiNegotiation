@@ -1,0 +1,175 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- icon css -->
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+
+    <!-- custom css link -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/teams.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/ai_supported.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/responsive_home.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/responsive_contact.css' %}" />
+
+    <title>{% block title %}Vanderbilt AI Negotiation Lab{% endblock %}</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="#">
+        <img
+          src="{%static 'images/vanderbilt_logo.png' %}"
+          alt="Vanderbilt Logo"
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="{% url 'requirements' %}" role="button">
+              Requirements
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Team
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="{% url 'negotiationTeam' %}"
+                >Negotiation Team</a
+              >
+              <a class="dropdown-item" href="{% url 'dataTeam' %}"
+                >Data Science Team</a
+              >
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Affiliations
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a
+                class="dropdown-item"
+                href="https://www.vanderbilt.edu/datascience/"
+                target="_blank"
+                >Vanderbilt Data Science Institute</a
+              >
+              <a
+                class="dropdown-item"
+                href="https://www.negotiationandteamresources.com/"
+                target="_blank"
+                >Negotiation and Team Resources</a
+              >
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    {% block content%} {% endblock %}
+
+    <footer>
+      <div class="container-fluid">
+        <div class="row d-flex align-items-center">
+          <div class="col-md-4 col-12">
+            <div class="footer1">
+              <a href="#" class="footer-brand">
+                <img
+                  src="{% static 'images/vanderbilt_logo_footer.png' %}"
+                  alt="Vanderbilt Logo"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-4 offset-md-4 col-12">
+            <div class="footer4">
+              <ul class="address-info">
+                <li>Vanderbilt University</li>
+                <li>2301 Vanderbilt Place</li>
+                <li>Nashville, TN 37235</li>
+                <li>615.322.3992</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="copyright">
+          <div class="row">
+            <div class="col-12">
+              <p>
+                Copyright &copy; 2022. All Right Reserved
+                <span
+                  ><a href="https://www.vanderbilt.edu/" target="_blank"
+                    >Vanderbilt University</a
+                  >
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

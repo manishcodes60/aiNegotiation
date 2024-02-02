@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Jesse Spencer Smith",
+        "position": "Chief Data Scientist",
+        "affiliation": "Interim Director @ Vanderbilt Data Science Institute",
+        "image": "jesse_spencer.jpg",
+        "portfolio": "https://www.vanderbilt.edu/datascience/person/jesse-spencer-smith/"
+    },
+    {
+        "name": "Jaewoo Cho",
+        "position": "Lead AI Data Science Researcher",
+        "affiliation": "MS Student",
+        "image": "jaewoo_cho.jpg",
+        "portfolio": "https://www.vanderbilt.edu/datascience/person/jaewoo-cho/"
+    },
+    {
+        "name": "Xuhui Zhan",
+        "position": "AI Data Science Researcher",
+        "affiliation": "MS Student",
+        "image": "xuhui_zhan.jpg",
+        "portfolio": "https://www.vanderbilt.edu/datascience/person/xuhui-zhan/"
+    },
+    {
+        "name": "Manish Acharya",
+        "position": "AI Front End Developer",
+        "affiliation": "Undergraduate Student",
+        "image": "manish_acharya.jpg",
+        "portfolio": "https://manish60.com.np/"
+    }
+]

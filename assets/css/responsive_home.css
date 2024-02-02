@@ -1,0 +1,91 @@
+@media (max-width: 600px) {
+  .navbar {
+    padding: 1.5em 1em;
+  }
+
+  .navbar-toggler, .navbar-toggler-icon{
+      border: none;
+      outline: none;
+      box-shadow: none;
+  }
+
+  .home-section {
+    margin: 2em 0 3em 0;
+    padding: 1em;
+    height: 100%;
+  }
+
+  .home-section .home-section-right {
+    display: none;
+  }
+
+  .technology-bar {
+    padding: 2em 1em;
+  }
+
+  .technology-bar .technology-logo {
+    width: 100%;
+  }
+
+  .about-section {
+    margin: 3em 0 !important;
+    padding: 0;
+  }
+
+  .about-section .about-section-right .about-section-right-image {
+    width: 100%;
+    margin-top: 1em;
+  }
+
+.service-section,
+.statistic-section,
+.team-section,
+.best-section,
+.contact-section {
+  padding: 2.5em 0em;
+}
+
+.title-design-shape {
+    width: 40%;
+  }
+
+  .service-section .service-section-title p,
+.statistic-section .statistic-section-title p,
+.team-section .team-section-title p,
+.best-section .best-section-title p,
+.contact-section .contact-section-title p,
+.blog-section .blog-section-title p {
+  width: 100%;
+}
+
+.services-attached {
+    padding: 4em 1em;
+  }
+
+  .services-attached .services-attached-left p {
+    width: 100%;
+  }
+
+  .team-section .team-info-row .team-info-box{
+    margin-bottom: 150px;
+  }
+
+  .blog-section{
+    padding: 4em 0em;
+}
+
+.blog-section .blog-box{
+    margin-bottom: 1em;
+}
+
+footer{
+    margin-top: 0em;
+    padding: 4em 0em 1em 0em;
+  }
+
+  .footer1 p{
+
+    width: 100%;
+
+  }
+}

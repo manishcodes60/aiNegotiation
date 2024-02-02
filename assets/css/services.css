@@ -1,0 +1,99 @@
+.title-banner{
+    margin: 0;
+}
+
+.service-section{
+    margin: 0 0 0!important;
+    padding: 4.5em 3em;
+}
+
+.service-section .services-container{
+    margin: 2em 0;
+}
+
+.service-section .services-container .services-box{
+    background: #fff;
+    padding:2em;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.service-section .services-container .services-box::before{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    content: '';
+    opacity: 0;
+    background: rgba(19, 116, 192, 1);
+    transition: all 0.3s ease-in-out;
+}
+
+.service-section .services-container .services-box::after{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    height: 4px;
+    content: '';
+    opacity: 0;
+    background: rgba(19, 116, 192, 1);
+    transition: all 0.3s ease-in-out;
+}
+
+.service-section .services-container .services-box:hover::after, .service-section .services-container .services-box:hover::before{
+    width: 51%;
+    opacity: 1;
+}
+
+.service-section .services-container .services-box .services-icon{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 50%;
+    background: rgba(19, 116, 192, 0.25);
+    margin-bottom: 1.5em;
+    transition: all 0.2s ease-in-out;
+}
+
+.service-section .services-container .services-box .services-icon i{
+    font-size: 2em;
+    color: rgba(19, 116, 192, 1);
+    transition: all 0.2s ease-in-out;
+}
+
+.service-section .services-container .services-box h6{
+    font-weight: bold;
+    color: #0e314c;
+    font-family: 'Lato';
+    font-size: 1.5em;
+    margin: 0.5em 0;
+}
+
+.service-section .services-container .services-box p{
+    color: #4a6f8a;
+    font-family: 'Poppins';
+    margin: 0.5em 0;
+}
+
+.service-section .services-container .services-box:hover{
+    box-shadow: 0 5px 45px 0 rgba(19, 116, 192, 0.13);
+    transform: translateY(-10px);
+}
+
+.service-section .services-container .services-box:hover .services-icon{
+    background: rgba(19, 116, 192, 1);
+}
+
+.service-section .services-container .services-box:hover .services-icon i{
+    color: #fff;
+}
+
+footer{
+    margin-top: 0;
+}

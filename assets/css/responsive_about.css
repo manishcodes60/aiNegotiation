@@ -1,0 +1,30 @@
+.about-information{
+    padding: 2em 0em;
+}
+
+.about-information .about-info-content{
+    margin-top: 2em;
+}
+
+.about-information .about-info-content .title-design-shape{
+    width: 35%;
+    display: block;
+    margin: 1.5em auto;
+}
+
+.about-information .about-info-content .about-info-title h4{
+    text-align: center;
+}
+
+.about-information .about-info-content p{
+    text-align: justify;
+}
+
+.about-information .mission-row{
+    margin: 1em 0;
+}
+
+.blog-section{
+    padding: 4em 0em;
+}
+

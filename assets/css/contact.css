@@ -1,0 +1,73 @@
+.contact-container{
+    margin: 3em 0;
+   
+}
+
+.contact-container .contact-info h4, .contact-container .contact-info h3{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    letter-spacing: 0.02em;
+}
+
+.contact-container .contact-info h3{
+    font-size: 3em;
+    font-family: "Antonio";
+    margin-bottom: 1em;
+}
+
+
+.contact-container .contact-info ul{
+    list-style-type: none;
+    margin-bottom: 0;
+}
+
+.contact-container .contact-info ul li{
+    padding: 0.1em 0;
+    font-weight: 500;
+    font-family: "Libre Caslon";
+    font-size: 1.1em;
+}
+
+.contact-container .contact-info a{
+    margin-top: 1em;
+    display: block;
+    color: #000000;
+    font-weight: bold;
+    letter-spacing: 0.01em;
+}
+
+.contact-container .contact-box{
+    background: #d8ab4c;
+    padding: 2em 1.5em;
+}
+
+.contact-people{
+    margin: 1em 0;
+}
+
+.contact-people .contact-people-box{
+    border: 1px solid #757575;
+    padding: 1em;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Antonio";
+}
+
+.contact-people .contact-people-box h5, .contact-people .contact-people-box h3{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.contact-people .contact-people-box h3{
+    text-decoration: underline;
+}
+
+.contact-people .contact-people-box p{
+    margin-bottom: 0;
+    font-family: "Inter";
+}
+
+.contact-people .contact-people-box p a{
+    color: #d8ab4c!important;
+}

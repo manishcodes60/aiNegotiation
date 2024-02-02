@@ -1,0 +1,55 @@
+.about-information{
+    padding: 2em 3em;
+}
+
+.about-information .about-info-image{
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+.about-information .about-info-image img{
+    width: 100%;
+}
+
+.about-information .about-info-content .about-info-title h4{
+        font-weight: bold;
+        font-size: 2em;
+        font-family: 'Lato';
+        color: #0e314c;
+}
+
+.about-information .about-info-content .title-design-shape{
+    width: 15%;
+    margin: 1.5em 0;
+}
+
+.about-information .about-info-content p{
+    color: #4a6f8a;
+    font-family: 'Poppins';
+}
+
+.about-information .mission-row{
+    margin: 3em 0;
+}
+
+.about-information .mission-row .mission-box{
+    padding: 1em 0;
+}
+
+.about-information .mission-row .mission-box span{
+        font-weight: bold;
+        font-size: 1.5em;
+        font-family: 'Lato';
+        color: #0e314c;
+}
+
+.about-information .mission-row .mission-box p{
+    color: #4a6f8a;
+    font-family: 'Poppins';
+    margin-top: 1em;
+}
+
+footer{
+    margin-top: 2em;
+}

@@ -1,0 +1,176 @@
+.transcript-section{
+    margin: 3em 0;
+    padding: 0 1.5em;
+}
+
+.transcript-section .transcript-introduction{
+
+}
+
+.transcript-section .transcript-introduction p{
+    font-family: 'Libre Caslon';
+    font-weight: 500;
+    line-height: 1.8em;
+    font-size: 1.15em;
+    margin-bottom: 0;
+    text-align: justify;
+}
+
+.divider{
+    margin: 2em 0 0 0;
+}
+
+.transcript-section .transcript-collapse{
+
+}
+
+.transcript-section .transcript-collapse .card{
+    background: #ffffff;
+    border-radius: 0;
+    text-align: center;
+    border: none;
+}
+
+.transcript-section .transcript-collapse .card .card-header{
+    background: #000000;
+    padding: 0!important;
+    font-family: "Antonio";
+    border-radius: 0;
+    border: 1px solid #ffffff;
+}
+
+.transcript-section .transcript-collapse .card .card-header h5 button{
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    font-size: 0.9em;
+    color: #ffffff;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+    padding: 1.2em 0;
+}
+
+.transcript-section .transcript-collapse .card .btn:not(.collapsed) {
+    color: #000000;
+    background-color: #d8ab4c;
+}
+
+.transcript-section .transcript-collapse .card .card-body{
+    font-family: 'Inter';
+    text-align: justify;
+}
+
+.transcript-section .transcript-collapse .card .card-body .card-body-subtitle{
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.green-badge, .blue-badge{
+    color: #ffffff;
+    background-color: rgba(92, 184, 92, 0.8);
+    border-radius: 3px;
+    padding: 3px 5px;
+    /* font-weight: bold; */
+}
+
+.blue-badge{
+    background-color: rgba(2, 117, 216, 0.8);
+}
+
+.red-badge{
+    color: red;
+    font-weight: bold;
+}
+
+.transcript-section .transcript-collapse .card .card-body .coding-table table{
+    font-size: 1em;
+}
+
+.coding-scheme-tab .nav{
+    justify-content: space-between;
+    background: #000000;
+    width: 100%;
+}
+
+.coding-scheme-tab .nav .nav-item{
+    text-align: center;
+    width: 50%;
+}
+
+.coding-scheme-tab .nav-pills .nav-link{
+    background: none;
+    border-radius: 0px;
+    border: none;
+    color: #ffffff;
+    font-family: "Antonio";
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    outline: none;
+    padding: 2em;
+    text-align: center;
+    width: 100%;
+}
+
+.coding-scheme-tab .nav-pills .nav-link:hover{
+    background: rgba(119, 119, 119, 0.5);
+}
+
+.coding-scheme-tab .nav-pills .nav-link.active{
+    background: #d8ab4c;
+}
+
+.coding-scheme-tab .scheme-content, .coding-scheme-tab .model-content{
+    padding: 1.5em 2em;
+}
+
+.coding-scheme-tab .scheme-content, .coding-scheme-tab .model-content .scheme-content .scheme-info{
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    color: #000000;
+}
+
+a{
+    color: #d8ab4c;
+}
+
+.form-group .form-control{
+    border-radius: 0;
+    padding: 1em 0.7em;
+    height: auto;
+    font-family: 'Libre Caslon';
+    outline: none;
+    box-shadow: none;
+    margin-bottom: 1em;
+}
+
+.form-group .form-control:focus{
+    border: 1px solid #d8ab4c;
+}
+
+.submit-button, .clear-button{
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+    padding: 0.7em 1em;
+    font-family: "Antonio";
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.clear-button{
+    background: #efefef!important;
+}
+
+.submit-button:focus, .clear-button:focus{
+    outline: none!important;
+    box-shadow: none!important;
+}

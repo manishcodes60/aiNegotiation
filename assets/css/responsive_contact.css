@@ -1,0 +1,15 @@
+.contact-container{
+    padding: 3em 0em;
+}
+
+.contact-container .contact-box .contact-icon{
+    padding: 0.5em;
+}
+
+.contact-container .contact-box{
+    margin: 1em 0;
+}
+
+.contact-section form{
+    margin: 2em 0;
+}

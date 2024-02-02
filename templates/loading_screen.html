@@ -1,0 +1,61 @@
+<!-- templates/yourapp/loading_screen.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <style>
+    .loading-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1em 0;
+        padding: 20px;
+        background: rgba(0,0,0,0.9);
+    }
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 40px;
+    aspect-ratio: 1;
+    display: grid;
+    color: #946E24;
+    background:
+      linear-gradient(90deg,currentColor 2px,#ECB748 0 calc(100% - 2px),currentColor 0) center/100% 14px,
+      linear-gradient(0deg, currentColor 2px,#946E24 0 calc(100% - 2px),currentColor 0) center/14px 100%,
+      linear-gradient(currentColor 0 0) center/100% 2px,
+      linear-gradient(currentColor 0 0) center/2px 100%;
+    background-repeat: no-repeat;
+    animation: l6 4s infinite linear;
+  }
+  .loader::before,
+  .loader::after {
+    content: "";
+    grid-area: 1/1;
+    background: inherit;
+    transform-origin: inherit;
+    animation: inherit;
+  }
+  .loader::after {
+    animation-duration: 2s;
+  }
+  @keyframes l6{
+    100% {transform:rotate(1turn)}
+  }
+
+  .loader-text{
+      margin-left: 1em;
+      font-weight: 500;
+      font-weight: 18px;
+      color: #fff;
+      font-family: "Libre Caslon";
+  }
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <div class="loader"></div> 
+        <div class="loader-text">Your transcript is being processed</div>
+    </div>
+</body>
+</html>

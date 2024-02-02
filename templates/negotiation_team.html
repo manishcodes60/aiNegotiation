@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block title %}Negotiation Team{% endblock %} {% block content %}
+{% load static %}
+<div class="team-section d-flex align-items-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 px-0">
+        <div class="team-section-title">
+          <h2>Negotiation Team</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-section-content">
+      <div class="row d-flex align-items-center">
+        {% for item in team_data %}
+          <div class="col-sm-4 mt-4">
+            <a
+              href="{{item.portfolio}}"
+              target="_blank"
+            >
+              <div class="team-card">
+                <div class="team-card-img">
+                  <img
+                    src="{% static 'images/' %}{{item.image}}"
+                    alt="Not Available!"
+                  />
+                </div>
+
+                <div class="team-card-info">
+                  <h3>{{item.name}}</h3>
+                  <p>{{item.position}}</p>
+                  <p>{{item.affiliation}}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

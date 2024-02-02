@@ -1,0 +1,53 @@
+{% extends "base.html" %} {% block title %}Requirements{% endblock %} {% block content %}
+<div class="requirement-section d-flex align-items-center">
+  <div class="container">
+    <div class="row d-flex align-items-center">
+      <div class="col-lg-8 offset-lg-2 px-0">
+        <div class="requirement-list">
+          <div class="requirement-item">
+            <div class="col-lg-4 p-0">
+              <div class="requirement-heading">Technical Skills</div>
+            </div>
+            <div class="requirement-desc">
+              <p>
+                We have designed the interface with our AI model in a way that
+                does not require you to have technical expertise related to
+                programing or LLMs. We provide a window where you post your
+                transcript, and give you results in a spreadsheet format that
+                includes each line of text, with the assigned code. The only
+                technical skills you need are to put the transcript into the
+                right format before pasting into the analysis window.
+              </p>
+            </div>
+          </div>
+          <div class="requirement-item">
+            <div class="col-lg-4 p-0">
+              <div class="requirement-heading">Registration for AI models</div>
+            </div>
+            <div class="requirement-desc">
+              <p>
+                You do not need to have registered for any AI models, or to have
+                an account on Github. That part is done by us.
+              </p>
+            </div>
+          </div>
+          <div class="requirement-item">
+            <div class="col-lg-4 p-0">
+              <div class="requirement-heading">Cost</div>
+            </div>
+            <div class="requirement-desc">
+              <p>
+                Computing costs should be less than $100 for coding fifty
+                30-minute transcripts. (Or: At the moment, we have funds to
+                cover the compute costs. If there is later a need for users to
+                cover compute costs, it should be less than $100 for coding
+                fifty 30-minute transcripts.)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Ray Friedman",
+        "position": "Professor of Management",
+        "affiliation": "Vanderbilt University",
+        "image": "ray_friedman.jpg",
+        "portfolio": "https://business.vanderbilt.edu/bio/ray-friedman/"
+    },
+    {
+        "name": "Brett Jeane",
+        "position": "Professor of Dispute Resolution and Organizations",
+        "affiliation": "Northwestern University",
+        "image": "brett_jeane.jpg",
+        "portfolio": "https://www.kellogg.northwestern.edu/faculty/directory/brett_jeanne.aspx"
+    },
+    {
+        "name": "Alfred Zerres",
+        "position": "Profeesor of Economics and Business",
+        "affiliation": "University of Amsterdam",
+        "image": "alfred_zerres.jpg",
+        "portfolio": "https://www.uva.nl/en/profile/z/e/a.zerres/a.zerres.html"
+    },
+    {
+        "name": "Elisabeth Jaeckel",
+        "position": "Doctral Student",
+        "affiliation": "University of Amsterdam",
+        "image": "elisabeth_jaeckel.jpg",
+        "portfolio": "https://abs.uva.nl/research/phd-research/phd-projects/elisabeth-jaeckel.html"
+    }
+]
